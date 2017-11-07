@@ -89,6 +89,18 @@ sbt:hello> Test / fork
 [info] true
 ```
 
+To aid migration a [Scalafix](https://scalacenter.github.io/scalafix/) rewrite rule was created. After setting
+up Scalafix (either locally to a project or user-wide) you should be able to migrate your build with:
+
+```scala
+> sbtfix github:sbt/sbt/v1_1
+```
+
+and migrate your sbt plugin code with:
+```scala
+> scalafix github:sbt/sbt/v1_1
+```
+
 ### Migrating from sbt 0.12 style
 
 Before sbt 0.13 (sbt 0.9 to 0.12) it was very common to see in builds the usage of three aspects of sbt:
